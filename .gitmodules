@@ -1,0 +1,3 @@
+[submodule "ytsaurus"]
+	path = ytsaurus
+	url = https://github.com/ytsaurus/ytsaurus.git

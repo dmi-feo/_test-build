@@ -1,0 +1,15 @@
+name: build
+on:
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: build
+        run: |
+          echo "Building the project..."
+          ./ytsaurus/ya package ./ytsaurus/yt/docker/ya-build/ytsaurus/package.json
