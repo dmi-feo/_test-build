@@ -33,10 +33,10 @@ RUN apt-get update \
 
 RUN wget https://apt.llvm.org/llvm.sh -O /tmp/llvm.sh \
     && chmod +x /tmp/llvm.sh \
-    && /tmp/llvm.sh 16 \
+    && /tmp/llvm.sh 18 \
     && rm /tmp/llvm.sh
 
-RUN python3 -m pip install PyYAML==6.0 conan==1.57.0 dacite
+RUN python3 -m pip install PyYAML==6.0.1 conan==2.4.1 dacite
 
 RUN curl -sL -o protoc.zip https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/protoc-${PROTOC_VERSION}-linux-x86_64.zip \
     && unzip protoc.zip -d /usr/local \
@@ -50,7 +50,7 @@ RUN mkdir -p ${BUILD_ROOT} ; cd ${BUILD_ROOT} \
     && cmake -G Ninja \
         -DCMAKE_BUILD_TYPE=Release \
         -DCMAKE_TOOLCHAIN_FILE=${SOURCE_ROOT}/clang.toolchain \
-        -DREQUIRED_LLVM_TOOLING_VERSION=16 \
+        -DREQUIRED_LLVM_TOOLING_VERSION=18 \
         ${SOURCE_ROOT} \
     && ninja ${BUILD_TARGETS}
 
