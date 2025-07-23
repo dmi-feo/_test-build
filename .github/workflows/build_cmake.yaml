@@ -13,7 +13,6 @@ jobs:
             submodules: 'true'
 
       - name: build
-        working-directory: ./ytsaurus
         run: |
           echo "Building the project..."
-          docker build .
+          docker build ./ytsaurus
