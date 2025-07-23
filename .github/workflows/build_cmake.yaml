@@ -15,4 +15,4 @@ jobs:
       - name: build
         run: |
           echo "Building the project..."
-          docker build ./ytsaurus
+          docker build ./ytsaurus -f ./Dockerfile
