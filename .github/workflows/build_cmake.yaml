@@ -1,0 +1,19 @@
+name: build_cmake
+on:
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+            fetch-depth: 1
+            submodules: 'true'
+
+      - name: build
+        working-directory: ./ytsaurus
+        run: |
+          echo "Building the project..."
+          docker build .
