@@ -29,6 +29,7 @@ RUN apt-get update \
       lsb-release \
       software-properties-common \
       gnupg \
+      linux-headers-generic \
     && rm -rf /var/lib/apt/lists/*
 
 RUN wget https://apt.llvm.org/llvm.sh -O /tmp/llvm.sh \
