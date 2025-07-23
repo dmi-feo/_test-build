@@ -38,6 +38,7 @@ RUN apt-get update \
       software-properties-common \
       gnupg \
       linux-headers-generic \
+      antlr3 \
     && rm -rf /var/lib/apt/lists/*
 
 RUN wget https://apt.llvm.org/llvm.sh -O /tmp/llvm.sh \
