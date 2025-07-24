@@ -14,6 +14,7 @@ jobs:
             submodules: 'true'
 
       - name: build
+        timeout-minutes: 4320  # 72 hours
         run: |
           echo "Building the project..."
           docker build ./ytsaurus -f ./Dockerfile
